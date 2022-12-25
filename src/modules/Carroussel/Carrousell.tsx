@@ -1,7 +1,11 @@
 import Tile from "./Tile"
 import { Box } from "@mui/material"
 import { useState } from "react"
-import Content0 from "./Content/Content0"
+import { lazyWithRetryAndLoader } from '../../utils/lazyWithRetry';
+
+const Content0 = lazyWithRetryAndLoader(() => import("./Content/Content0/index"));
+const Content1 = lazyWithRetryAndLoader(() => import("./Content/Content1/index"));
+
 
 const Carrousell = () => {
 
@@ -23,7 +27,8 @@ const Carrousell = () => {
     },
     {
       index: 1,
-      position: position(1)
+      position: position(1),
+      content: <Content1 />
     },
     {
       index: 2,
