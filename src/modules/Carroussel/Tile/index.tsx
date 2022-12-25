@@ -6,9 +6,10 @@ interface Props {
   index: number;
   position: string
   setTileIndex: (tileIndex: number) => void
+  content?: JSX.Element
 }
 
-const Tile = ({ tileIndex, index, position, setTileIndex }: Props) => {
+const Tile = ({ tileIndex, index, position, setTileIndex, content }: Props) => {
 
   const left = () => {
     if (position === "front") return 0
@@ -24,6 +25,7 @@ const Tile = ({ tileIndex, index, position, setTileIndex }: Props) => {
       onClick={() => setTileIndex(index)}
       style={{
         position: "absolute",
+        padding: "20px",
         top: 0,
         bottom: 0,
         marginTop: "auto",
@@ -35,13 +37,13 @@ const Tile = ({ tileIndex, index, position, setTileIndex }: Props) => {
         zIndex: position === "front" ? 1000 : 1,
         height: "85vh",
         width: "85vh",
-        backgroundColor: "red",
-        borderRadius: "20px",
+        backgroundColor: "#0E0A09",
+        borderRadius: "12%",
         transition: "all 2s ease",
-        boxShadow: "5px 5px 5px blue",
-        transform: position === "front" ? "scale(1)" : "scale(0.6)"
+        boxShadow: "5px 5px 5px #00000066",
+        transform: position === "front" ? "scale(1)" : "scale(0.65)"
       }}
-    >{index}</Box>
+    >{index}{content}</Box>
   );
 };
 

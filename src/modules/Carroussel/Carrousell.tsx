@@ -1,6 +1,7 @@
 import Tile from "./Tile"
 import { Box } from "@mui/material"
 import { useState } from "react"
+import Content0 from "./Content/Content0"
 
 const Carrousell = () => {
 
@@ -8,7 +9,7 @@ const Carrousell = () => {
 
   const position = (index: number) => {
     if (index === tileIndex) return "front"
-    if (index - tileIndex === 1) return "right"
+    if (index - tileIndex === 1 || index - tileIndex === -3) return "right"
     if (index - tileIndex === 2) return "back"
     else return "left"
   }
@@ -16,7 +17,8 @@ const Carrousell = () => {
   const tiles = [
     {
       index: 0,
-      position: position(0)
+      position: position(0),
+      content: <Content0 />
 
     },
     {
@@ -38,13 +40,11 @@ const Carrousell = () => {
       {tiles.map((tile, pos) => {
         return (
           <div key={pos}>
-            <Tile tileIndex={tileIndex} index={tile.index} position={tile.position} setTileIndex={setTileIndex} />
+            <Tile tileIndex={tileIndex} content={tile.content} index={tile.index} position={tile.position} setTileIndex={setTileIndex} />
           </div>
         )
       })}
-      <Box style={{ zIndex: 2000 }}>
-        {tileIndex}
-      </Box>
+
     </Box>)
 }
 
