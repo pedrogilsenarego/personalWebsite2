@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgba(245, 245, 245, 0.71);
   overflow: hidden;
 }
 
