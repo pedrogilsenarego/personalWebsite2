@@ -1,4 +1,5 @@
 import { Box, Typography, Grid } from "@mui/material";
+import "./styles.css"
 
 const Content0 = () => {
   return (
@@ -13,20 +14,28 @@ const Content0 = () => {
               fontWeight: 700,
               padding: "0.7em",
               borderRadius: "3px",
-              width: "fit"
+              width: "fit",
             }}
           >
             Something DOnt know what
           </Box>
-          <Typography fontSize='1.5em' style={{ fontWeight: 800 }}>
+          <Typography
+            className="buzzing-element-0"
+            mt='1em'
+            fontSize='1.1em'
+            style={{
+              fontWeight: 800,
+              fontFamily: "neontubes",
+              lineHeight: "1.2em",
+            }}
+          >
             Hi!! I'm Pedro, a Web Dev
           </Typography>
-          <Typography fontSize='0.5em'>
-            Started my career as a chemical engineer, and evetually fall in love
-            with everything with web. Started my career as a chemical engineer,
-            and evetually fall in love with everything with web. Started my
-            career as a chemical engineer, and evetually fall in love with
-            everything with web.
+          <Typography mt='1em' fontSize='0.5em'>
+            Started my career as a biological engineer researcher, and during my
+            life have been learning Robotics, Electronics, 3D-Design, and many
+            other skills, however, eventually, felt in love with Web
+            Development.
           </Typography>
         </Grid>
       </Grid>

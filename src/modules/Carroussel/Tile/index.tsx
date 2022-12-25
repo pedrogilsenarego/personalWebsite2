@@ -39,8 +39,8 @@ const Tile = ({ tileIndex, index, position, setTileIndex, content }: Props) => {
         zIndex: position === "front" ? 1000 : 1,
         height: "85vh",
         width: "85vh",
-        backgroundColor: tileIndex === 1 ? "#0E0A0966" : "#0E0A09",
-        borderRadius: "12%",
+        backgroundColor: tileIndex === 1 ? "#0E0A09CC" : "#0E0A09",
+        borderRadius: "10%",
         transition: "all 2s ease",
         boxShadow: "5px 5px 5px #00000066",
         transform:
@@ -51,7 +51,6 @@ const Tile = ({ tileIndex, index, position, setTileIndex, content }: Props) => {
               : "scale(0.65)",
       }}
     >
-      {index}
       {content}
     </Box>
   );
