@@ -26,6 +26,7 @@ const Tile = ({ tileIndex, index, position, setTileIndex, content }: Props) => {
     <Box
       onClick={() => setTileIndex(index)}
       style={{
+        cursor: "pointer",
         position: "absolute",
         padding: "20px",
         top: 0,
@@ -40,7 +41,7 @@ const Tile = ({ tileIndex, index, position, setTileIndex, content }: Props) => {
         height: "85vh",
         width: "85vh",
         backgroundColor: tileIndex === 1 ? "#0E0A09CC" : "#0E0A09",
-        borderRadius: "10%",
+        borderRadius: "9%",
         transition: "all 2s ease",
         boxShadow: "5px 5px 5px #00000066",
         transform:
@@ -48,7 +49,7 @@ const Tile = ({ tileIndex, index, position, setTileIndex, content }: Props) => {
             ? "scale(0.85) perspective(800px) rotateX(55deg)"
             : position === "front"
               ? "scale(1)"
-              : "scale(0.65)",
+              : position === "back" ? "scale(0.45)" : "scale(0.65)",
       }}
     >
       {content}
