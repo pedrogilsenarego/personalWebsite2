@@ -52,6 +52,7 @@ const Tile = ({ tileIndex, index, position, setTileIndex, content }: Props) => {
               : position === "back" ? "scale(0.45)" : "scale(0.65)",
       }}
     >
+
       {content}
     </Box>
   );

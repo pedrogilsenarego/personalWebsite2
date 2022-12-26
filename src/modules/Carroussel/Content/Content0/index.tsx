@@ -13,6 +13,7 @@ const Content0 = () => {
               fontSize: "0.5em",
               fontWeight: 700,
               padding: "0.7em",
+              border: "solid 1px #ffffffCC",
               borderRadius: "3px",
               width: "fit",
             }}

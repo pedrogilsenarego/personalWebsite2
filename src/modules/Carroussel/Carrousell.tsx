@@ -5,6 +5,7 @@ import { lazyWithRetryAndLoader } from '../../utils/lazyWithRetry';
 
 const Content0 = lazyWithRetryAndLoader(() => import("./Content/Content0/index"));
 const Content1 = lazyWithRetryAndLoader(() => import("./Content/Content1/index"));
+const Content3 = lazyWithRetryAndLoader(() => import("./Content/Content3/index"));
 
 
 const Carrousell = () => {
@@ -14,7 +15,7 @@ const Carrousell = () => {
   const position = (index: number) => {
     if (index === tileIndex) return "front"
     if (index - tileIndex === 1 || index - tileIndex === -3) return "right"
-    if (index - tileIndex === 2) return "back"
+    if (index - tileIndex === 2 || index - tileIndex === -2) return "back"
     else return "left"
   }
 
@@ -36,7 +37,8 @@ const Carrousell = () => {
     },
     {
       index: 3,
-      position: position(3)
+      position: position(3),
+      content: <Content3 />
     },
   ]
 
